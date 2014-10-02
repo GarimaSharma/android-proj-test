@@ -34,6 +34,11 @@ public class MyActivityTest extends ActivityInstrumentationTestCase2 {
         Assert.assertEquals(hello.getText(), "Hello World, MyActivity");
     }
 
+    public void testPreferenceIsSavedWithNew() throws Exception {
+        TextView hello = (TextView) solo.getView("newText");
+        Assert.assertEquals(hello.getText(), "new test text");
+    }
+
     @Override
     public void tearDown() throws Exception {
         solo.finishOpenedActivities();
